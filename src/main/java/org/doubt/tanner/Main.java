@@ -1,5 +1,6 @@
 package org.doubt.tanner;
 
+import java.awt.Graphics2D;
 import java.lang.reflect.InvocationTargetException;
 
 import javax.swing.SwingUtilities;
@@ -20,6 +21,7 @@ import org.osbot.rs07.script.ScriptManifest;
 public final class Main extends Script {
 	private ActionController act_con;
 	private Gui gui;
+	private PaintManager paintmgr;
 
 	@Override
 	public int onLoop() throws InterruptedException {
@@ -55,5 +57,14 @@ public final class Main extends Script {
 		act_con.addAction(new WalkToTanner(getBot()));
 		act_con.addAction(new Bank(getBot()));
 		act_con.addAction(new Tan(getBot()));
+
+		paintmgr = new PaintManager(getBot());
+	}
+
+	@Override
+	public void onPaint(Graphics2D g) {
+		if (paintmgr != null) {
+			paintmgr.paint(g);
+		}
 	}
 }

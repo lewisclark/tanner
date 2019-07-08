@@ -20,13 +20,12 @@ public final class Gui {
 
         dialog = new JDialog();
 		dialog.setTitle(Global.SCRIPT_NAME);
-		dialog.setSize(300, 300);
-		dialog.setModal(true);
+		dialog.setSize(200, 120);
 		dialog.setModalityType(ModalityType.APPLICATION_MODAL);
 
 		JPanel panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
-		panel.setBorder(new EmptyBorder(20, 20, 20, 20));
+		panel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		dialog.getContentPane().add(panel);
 
 		hideCombo = new JComboBox<>(Hide.values());

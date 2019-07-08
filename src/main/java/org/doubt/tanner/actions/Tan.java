@@ -21,18 +21,26 @@ public final class Tan extends Action {
 
 	@Override
 	public void execute() throws InterruptedException {
-		NPC tanner = bot.getMethods().getNpcs().closest(Global.config.getLocation().getTannerName());
-
-		if (tanner == null || !tanner.interact("Trade"))
-			return;
-
-		if (!Sleep.sleepUntil(() -> getButton() != null, 10000))
-			return;
-
 		RS2Widget button = getButton();
 
-		if (button != null) {
-			button.interact("Tan All");
+		if (button == null) {
+			NPC tanner = bot.getMethods().getNpcs().closest(Global.config.getLocation().getTannerName());
+
+			if (tanner == null || !tanner.interact("Trade"))
+				return;
+
+			if (!Sleep.sleepUntil(() -> getButton() != null, 10000))
+				return;
+		} else {
+			if (!button.interact("Tan All"))
+				return;
+		
+			String tannedName = Global.config.getHide().getTannedName();
+
+			if (!Sleep.sleepUntil(() -> bot.getMethods().getInventory().contains(tannedName), 2500))
+				return;
+
+			Global.hidesTanned += bot.getMethods().getInventory().getAmount(tannedName);
 		}
 	}
 
