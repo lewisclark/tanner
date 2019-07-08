@@ -17,6 +17,7 @@ public final class PaintManager {
 	public void paint(Graphics2D g) {
 		g.setColor(new Color(255, 255, 255));
 
+		g.drawString("Prime Tanner", 5, 305);
 		g.drawString(getTimeRunning(), 5, 320);
 		g.drawString("Tanned: " + Global.hidesTanned, 5, 335);
 	}

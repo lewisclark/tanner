@@ -7,15 +7,28 @@ import javax.swing.SwingUtilities;
 
 import org.doubt.tanner.actions.*;
 import org.osbot.rs07.api.ui.Skill;
+import org.osbot.rs07.script.SDNScriptManifest;
 import org.osbot.rs07.script.Script;
 import org.osbot.rs07.script.ScriptManifest;
 
+/*
+TODO:
+
+- Support CLI
+- Better logo?
+*/
+
 @ScriptManifest (
 	author = "doubt",
-	info = "Tans all types of hides.",
-	logo = "",
+	info = Global.SCRIPT_INFO,
+	logo = "https://i.imgur.com/em0j2xO.jpg",
 	name = Global.SCRIPT_NAME,
-	version = 1.0
+	version = Global.SCRIPT_VERSION
+)
+
+@SDNScriptManifest (
+	info = Global.SCRIPT_INFO,
+	version = Global.SCRIPT_VERSION
 )
 
 public final class Main extends Script {
@@ -25,7 +38,10 @@ public final class Main extends Script {
 
 	@Override
 	public int onLoop() throws InterruptedException {
-		return act_con.onLoop();
+		if (act_con != null)
+			return act_con.onLoop();
+		else
+			return 1000;
 	}
 	
 	@Override

@@ -1,5 +1,7 @@
 package org.doubt.tanner;
 
+import org.osbot.rs07.script.MethodProvider;
+
 public final class Config {
 	private Hide hide;
 	private Location location;
@@ -18,5 +20,9 @@ public final class Config {
 
 	public void setLocation(Location location) {
 		this.location = location;
+	}
+
+	public int sleepDuration() {
+		return MethodProvider.random(500, 800);
 	}
 }

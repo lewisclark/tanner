@@ -3,8 +3,6 @@ package org.doubt.tanner;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.osbot.rs07.script.MethodProvider;
-
 public final class ActionController {
 	private List<Action> actions = new ArrayList<>();
 
@@ -16,7 +14,7 @@ public final class ActionController {
 			}
 		}
 
-		return MethodProvider.random(500, 800);
+		return Global.config.sleepDuration();
 	}
 
 	public void addAction(Action action) {
