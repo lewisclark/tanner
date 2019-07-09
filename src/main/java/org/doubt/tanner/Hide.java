@@ -1,48 +1,23 @@
 package org.doubt.tanner;
 
 public enum Hide {
-	SOFT_LEATHER,
-	HARD_LEATHER,
-	GREEN,
-	BLUE,
-	RED,
-	BLACK;
+	SOFT_LEATHER("Cowhide", "Leather", "Soft leather", 1),
+	HARD_LEATHER("Cowhide", "Hard leather", "Hard leather", 28),
+	GREEN("Green dragonhide", "Green dragon leather", "Green d'hide", 57),
+	BLUE("Blue dragonhide", "Blue dragon leather", "Blue d'hide", 66),
+	RED("Red dragonhide", "Red dragon leather", "Red d'hide", 73),
+	BLACK("Black dragonhide", "Black dragon leather", "Black d'hide", 79);
 
 	private String rawName = "n/a";
 	private String tannedName = "n/a";
 	private String tannerName = "n/a"; // The name in the tanner gui
 	private int minCraftingLvl = 99;
 
-	static {
-		SOFT_LEATHER.rawName = "Cowhide";
-		SOFT_LEATHER.tannedName = "Leather";
-		SOFT_LEATHER.tannerName = "Soft leather";
-		SOFT_LEATHER.minCraftingLvl = 1;
-
-		HARD_LEATHER.rawName = "Cowhide";
-		HARD_LEATHER.tannedName = "Hard leather";
-		HARD_LEATHER.tannerName = "Hard leather";
-		HARD_LEATHER.minCraftingLvl = 28;
-
-		GREEN.rawName = "Green dragonhide";
-		GREEN.tannedName = "Green dragon leather";
-		GREEN.tannerName = "Green d'hide";
-		GREEN.minCraftingLvl = 57;
-
-		BLUE.rawName = "Blue dragonhide";
-		BLUE.tannedName = "Blue dragon leather";
-		BLUE.tannerName = "Blue d'hide";
-		BLUE.minCraftingLvl = 66;
-
-		RED.rawName = "Red dragonhide";
-		RED.tannedName = "Red dragon leather";
-		RED.tannerName = "Red d'hide";
-		RED.minCraftingLvl = 73;
-
-		BLACK.rawName = "Black dragonhide";
-		BLACK.tannedName = "Black dragon leather";
-		BLACK.tannerName = "Black d'hide";
-		BLACK.minCraftingLvl = 79;
+	Hide(String rawName, String tannedName, String tannerName, int minCraftingLvl) {
+		this.rawName = rawName;
+		this.tannedName = tannedName;
+		this.tannerName = tannerName;
+		this.minCraftingLvl = minCraftingLvl;
 	}
 	
 	@Override
