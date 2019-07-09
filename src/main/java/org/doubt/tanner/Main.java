@@ -26,11 +26,6 @@ TODO:
 	version = Global.SCRIPT_VERSION
 )
 
-@SDNScriptManifest (
-	info = Global.SCRIPT_INFO,
-	version = Global.SCRIPT_VERSION
-)
-
 public final class Main extends Script {
 	private ActionController act_con;
 	private Gui gui;
