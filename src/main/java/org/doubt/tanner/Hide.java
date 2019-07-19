@@ -1,23 +1,21 @@
 package org.doubt.tanner;
 
 public enum Hide {
-	SOFT_LEATHER("Cowhide", "Leather", "Soft leather", 1),
-	HARD_LEATHER("Cowhide", "Hard leather", "Hard leather", 28),
-	GREEN("Green dragonhide", "Green dragon leather", "Green d'hide", 57),
-	BLUE("Blue dragonhide", "Blue dragon leather", "Blue d'hide", 66),
-	RED("Red dragonhide", "Red dragon leather", "Red d'hide", 73),
-	BLACK("Black dragonhide", "Black dragon leather", "Black d'hide", 79);
+	SOFT_LEATHER("Cowhide", "Leather", "Soft leather"),
+	HARD_LEATHER("Cowhide", "Hard leather", "Hard leather"),
+	GREEN("Green dragonhide", "Green dragon leather", "Green d'hide"),
+	BLUE("Blue dragonhide", "Blue dragon leather", "Blue d'hide"),
+	RED("Red dragonhide", "Red dragon leather", "Red d'hide"),
+	BLACK("Black dragonhide", "Black dragon leather", "Black d'hide");
 
 	private String rawName = "n/a";
 	private String tannedName = "n/a";
 	private String tannerName = "n/a"; // The name in the tanner gui
-	private int minCraftingLvl = 99;
 
-	Hide(String rawName, String tannedName, String tannerName, int minCraftingLvl) {
+	Hide(String rawName, String tannedName, String tannerName) {
 		this.rawName = rawName;
 		this.tannedName = tannedName;
 		this.tannerName = tannerName;
-		this.minCraftingLvl = minCraftingLvl;
 	}
 	
 	@Override
@@ -35,9 +33,5 @@ public enum Hide {
 
 	public String getTannerNamme() {
 		return tannerName;
-	}
-
-	public int getMinCraftingLvl() {
-		return minCraftingLvl;
 	}
 }

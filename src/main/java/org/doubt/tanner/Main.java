@@ -60,10 +60,6 @@ public final class Main extends Script {
 		Global.config.setHide(gui.getSelectedHide());
 		Global.config.setLocation(gui.getSelectedLocation());
 
-		if (bot.getMethods().getSkills().getStatic(Skill.CRAFTING) < Global.config.getHide().getMinCraftingLvl()) {
-			Util.abort(getBot(), "Crafting level too low");
-		}
-
 		act_con.addAction(new WalkToBank(getBot()));
 		act_con.addAction(new WalkToTanner(getBot()));
 		act_con.addAction(new Bank(getBot()));
