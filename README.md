@@ -7,4 +7,4 @@
 An Old School Runescape Tanning Script for the OSBot Client. Tanner currently has over 1,100 users on the OSBot platform.
 
 ## License
-License under the [MIT License](LICENSE.md).
+Licensed under the [MIT License](LICENSE.md).
